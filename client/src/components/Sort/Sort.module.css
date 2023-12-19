@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sort {
+  border: 1px solid var(--gray300);
+  background-color: var(--white);
+  border-radius: 0.3em;
+  display: flex;
+  position: relative;
+  min-height: 1.5em;
+  width: 15ch;
+  font-size: 15px;
+  padding: 0.3em 0.5em;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sortOption {
+  font-family: inherit;
+}

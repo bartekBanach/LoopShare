@@ -1,0 +1,87 @@
+.container {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+
+.header {
+  border: 1px solid var(--gray300);
+  background-color: var(--white);
+  border-radius: 0.3em;
+  padding: 0.1em 0.3em;
+  width: 8.5em;
+  min-height: 1.5em;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--black);
+  text-align: left;
+  display: flex;
+}
+
+.header button {
+}
+
+.value {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  background-color: var(--white);
+  font-size: 1.2em;
+}
+
+.button svg {
+  display: block;
+  margin: auto;
+}
+
+.options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--gray300);
+  max-height: 10em;
+  overflow-y: auto;
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  background-color: var(--white);
+}
+
+.bottom {
+  top: calc(100% + 0.3em);
+}
+.top {
+  bottom: calc(100% + 0.3em);
+}
+
+.options.show {
+  visibility: visible;
+}
+
+.option {
+}
+
+.option.highlighted {
+  background-color: var(--gray300);
+}
+
+.option.selected {
+  background-color: blue;
+}
+
+.optionLabel {
+  max-width: 100%;
+  display: block;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
+}
+
+.optionRadio {
+  display: none;
+}

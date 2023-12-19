@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fixed {
+  position: fixed;
+  left: 60%;
+  top: 50%;
+  z-index: 1;
+}
+
+.absolute {
+  width: fit-content;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+
+  z-index: 1;
+}
+
+.spinner {
+  height: 100px;
+  width: 100px;
+  border: 15px solid var(--gray300);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

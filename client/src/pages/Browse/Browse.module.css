@@ -1,0 +1,29 @@
+.container {
+  padding-top: 2rem;
+}
+.header {
+  background-color: var(--gray400);
+  color: white;
+  font-size: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.content {
+  border-radius: 1rem;
+}
+
+.list {
+  background-color: var(--white);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  width: 75%;
+  margin: 0 auto;
+  justify-content: center;
+  border-radius: 10px;
+}

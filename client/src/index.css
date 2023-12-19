@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'CodystarRegular';
+  src:
+    local('CodystarRegular'),
+    url('./fonts/Codystar/Codystar-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src:
+    local('RobotoMono'),
+    url('./fonts/RobotoMono/RobotoMono-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Karla';
+  src:
+    local('Karla'),
+    url('./fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: '5by7';
+  src: url('./fonts/5by7/5by7.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lampen';
+  src: url('./fonts/5mal6Lampen/5mal6Lampen.ttf') format('truetype');
+}
+
+:root {
+  --white: #f9fafb;
+  --black: #030712;
+
+  --gray: #6b7280;
+  --gray100: #f3f4f6;
+  --gray200: #e5e7eb;
+  --gray300: #d1d5db;
+  --gray400: #9ca3af;
+  --gray600: #57534e;
+  --gray700: #44403c;
+
+  --red: #ef4444;
+  --darkred: #dc2626;
+  --lightred: #f87171;
+
+  --blue: #3b82f6;
+  --lightblue: #93c5fd;
+  --darkblue: #2563eb;
+
+  --yellow: #eab308;
+
+  --lightgreen: #d9f99d;
+  --green: #22c55e;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

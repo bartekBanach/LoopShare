@@ -1,0 +1,128 @@
+.container {
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--white);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+.headerMain {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.downloadBtn {
+  background-color: white;
+  border-radius: 10%;
+  border: 1px solid var(--gray300);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  padding: 0.5em;
+}
+
+.downloadBtn svg {
+  font-size: 1.9rem;
+  margin: auto;
+  display: block;
+  color: var(--darkblue);
+}
+
+.username {
+  display: flex;
+  gap: 0.2rem;
+  border-radius: 5px;
+  padding: 0.3rem;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  border: 1px solid var(--gray300);
+}
+
+.username a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.username svg {
+  color: var(--gray600);
+}
+
+.content {
+  padding: 0.3rem;
+}
+
+.uploadDate {
+  margin: 0;
+}
+
+.player {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.playBtn {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 10%;
+  background-color: white;
+  border: 1px solid var(--gray300);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  color: var(--darkblue);
+}
+
+.waveformWrapper {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+
+  border-radius: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+.waveform {
+  cursor: pointer;
+}
+
+.placeholder {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.fill {
+  background-color: var(--gray300);
+  height: 25px;
+  border-radius: 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+}
+
+.infoItem {
+  border-radius: 5px;
+  padding: 0.3rem;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+}

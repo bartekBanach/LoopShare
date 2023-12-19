@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bpmField {
+  display: flex;
+  border: 1px solid var(--gray300);
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 0.3em;
+  gap: 0.7em;
+}
+
+.bpmInput {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  border: 1px solid var(--gray300);
+  margin: 0;
+  border-radius: 0.3em;
+  text-align: center;
+  font-size: 0.8rem;
+  width: 2.5em;
+}
+
+.bpmBtn {
+  border: none;
+  background-color: var(--gray200);
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.3em 0.5em;
+  cursor: pointer;
+  border-radius: 0.3em;
+  border: 1px solid var(--gray300);
+}
+
+.bpmBtn:hover {
+  background-color: var(--gray300);
+}

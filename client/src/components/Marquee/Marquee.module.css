@@ -1,0 +1,52 @@
+.black {
+  background-color: var(--black);
+}
+
+.blue {
+  background-color: salmon;
+}
+
+.pink {
+  background-color: #fe8786;
+}
+
+.green {
+  background-color: #7bc950;
+}
+
+.marquee {
+  --gap: 1rem;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  color: var(--white);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+  padding: 0.5rem;
+}
+
+.marquee__content {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  font-size: 24px;
+  font-family: '5by7' !important;
+
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  animation: scroll 40s linear infinite;
+  animation-direction: reverse;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}

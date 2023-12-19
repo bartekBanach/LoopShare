@@ -1,0 +1,77 @@
+.container {
+  border: 1px solid var(--gray300);
+  background-color: var(--white);
+  border-radius: 0.3em;
+  display: flex;
+  position: relative;
+  width: 15em;
+  min-height: 1.5em;
+  font-size: 15px;
+  padding: 0.3em 0.5em;
+}
+
+.container:focus {
+  border-color: blue;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.value {
+  flex-grow: 1;
+  display: flex;
+  gap: 0.2em;
+  cursor: pointer;
+  flex-wrap: wrap;
+  line-height: 1.5em;
+}
+
+.selectedOption {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  border: 1px solid var(--white);
+  background-color: var(--white);
+}
+
+.options {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  border: 1px solid var(--gray300);
+  max-height: 10em;
+  overflow-y: auto;
+  background-color: var(--white);
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.3em);
+  width: 100%;
+}
+
+.options.show {
+  display: block;
+}
+
+.option {
+  cursor: pointer;
+}
+
+.checkbox {
+  background-color: red;
+  margin: 10px;
+}
+
+.option.highlighted {
+  background-color: var(--gray300);
+}
+
+.option.selected {
+  background-color: blue;
+}

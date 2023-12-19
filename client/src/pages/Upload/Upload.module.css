@@ -1,0 +1,12 @@
+.container {
+  width: 95%;
+  position: relative;
+
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white);
+  justify-content: space-between;
+  max-height: 100vh;
+  height: 100vh;
+}

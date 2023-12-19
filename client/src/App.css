@@ -1,0 +1,6 @@
+body,
+html {
+  font-family: 'Karla';
+  color: var(--black);
+  background-color: var(--white);
+}
