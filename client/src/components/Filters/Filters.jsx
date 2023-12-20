@@ -3,7 +3,7 @@ import styles from './Filters.module.css';
 import MultiSelect from '../MultiSelect/MultiSelect';
 import CustomSelect from '../CustomSelect/CustomSelect';
 import categories from '../../data/selectCategories';
-import keys from '../../data/selectKeys';
+import keys from '../../data/encodedKeys';
 
 const types = [
   { id: 0, label: 'All', value: '' },
@@ -30,12 +30,6 @@ function Filters({ filters, setFilters, setCurrentPage }) {
 
   return (
     <div className={styles.container}>
-      <CustomSelect
-        options={types}
-        value={filters.type}
-        placeholder="Type"
-        onChange={(value) => handleFiltersChange(value, 'type')}
-      />
       <MultiSelect
         options={categories}
         value={filters.categories}

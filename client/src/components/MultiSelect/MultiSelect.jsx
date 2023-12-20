@@ -1,6 +1,6 @@
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoIosArrowDown } from 'react-icons/io';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useId } from 'react';
 import styles from './MultiSelect.module.css';
 import useOutsideClick from '../../hooks/useOutsideClick';
 
@@ -10,6 +10,8 @@ function MultiSelect({ options, value, placeholder, onChange }) {
 
   const containerRef = useRef(null);
   const listboxRef = useRef(null);
+  const id = useId();
+
   useOutsideClick(containerRef, () => setOpen(false));
 
   useEffect(() => {
@@ -80,7 +82,7 @@ function MultiSelect({ options, value, placeholder, onChange }) {
     <div className={styles.container} ref={containerRef}>
       <div
         className={styles.value}
-        aria-controls="options"
+        aria-controls={`${id}-options`}
         aria-expanded={open}
         aria-haspopup="listbox"
         role="combobox"
@@ -117,7 +119,7 @@ function MultiSelect({ options, value, placeholder, onChange }) {
       <ul
         className={`${styles.options} ${open && styles.show}`}
         role="listbox"
-        id="options"
+        id={`${id}-options`}
         tabIndex={-1}
         aria-label="options"
         aria-activedescendant={highlighted}

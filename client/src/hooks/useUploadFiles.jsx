@@ -28,7 +28,7 @@ const useUploadFiles = (setFiles) => {
         formData.append('upload_preset', 'sampleshare');
         formData.append(
           'context',
-          `category=${file.category.value || ''}|type=${file.type || ''}|key=${file.key.value || ''}|bpm=${file.bpm}`
+          `category=${file.category || ''}|type=${file.type || ''}|key=${file.key || ''}|bpm=${file.bpm}`
         );
 
         return axios.post(

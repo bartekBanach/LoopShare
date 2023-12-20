@@ -8,7 +8,7 @@
   border: 1px solid var(--gray300);
   background-color: var(--white);
   border-radius: 0.3em;
-  padding: 0.1em 0.3em;
+  padding: 0.3em 0.5em;
   width: 8.5em;
   min-height: 1.5em;
   font-size: 1rem;
@@ -16,9 +16,6 @@
   color: var(--black);
   text-align: left;
   display: flex;
-}
-
-.header button {
 }
 
 .value {
@@ -65,6 +62,10 @@
 }
 
 .option {
+  max-width: 100%;
+  display: block;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
 }
 
 .option.highlighted {

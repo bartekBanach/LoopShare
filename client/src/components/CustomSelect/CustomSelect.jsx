@@ -1,7 +1,7 @@
 import { IoIosArrowDown } from 'react-icons/io';
-import { useState, useRef, useEffect } from 'react';
-import styles from './CustomSelect.module.css';
+import { useState, useRef, useEffect, useId } from 'react';
 import useOutsideClick from '../../hooks/useOutsideClick';
+import styles from './CustomSelect.module.css';
 
 function CustomSelect({ options, value = '', placeholder, onChange }) {
   const [open, setOpen] = useState(false);
@@ -12,6 +12,7 @@ function CustomSelect({ options, value = '', placeholder, onChange }) {
 
   const containerRef = useRef(null);
   const listboxRef = useRef(null);
+  const id = useId();
 
   useOutsideClick(containerRef, () => setOpen(false));
 
@@ -20,8 +21,8 @@ function CustomSelect({ options, value = '', placeholder, onChange }) {
   }, [open]);
 
   const selectOption = (option) => {
-    setOpen(false);
     onChange(option.value);
+    setOpen(false);
   };
 
   const handleOpen = () => {
@@ -91,15 +92,11 @@ function CustomSelect({ options, value = '', placeholder, onChange }) {
     }
   };
 
-  const handleClick = (option) => {
-    selectOption(option);
-  };
-
   return (
     <div className={styles.container} ref={containerRef}>
       <button
         type="button"
-        aria-controls="options"
+        aria-controls={`${id}-options`}
         aria-expanded={open}
         aria-haspopup="listbox"
         role="combobox"
@@ -118,32 +115,27 @@ function CustomSelect({ options, value = '', placeholder, onChange }) {
       <ul
         className={`${styles.options} ${open && styles.show} ${styles[optionsDisplay]}`}
         role="listbox"
-        id="options"
+        id={`${id}-options`}
         tabIndex={-1}
         aria-label="options"
         aria-activedescendant={highlighted}
         ref={listboxRef}
       >
         {options.map((option) => (
+          /* eslint-disable jsx-a11y/click-events-have-key-events */
+
           <li
             className={`${styles.option} ${highlighted === option.id && styles.highlighted}`}
             key={option.id}
             role="option"
             aria-selected={option.id === highlighted}
             onMouseEnter={() => setHighlighted(option.id)}
+            onClick={() => selectOption(option)}
           >
-            <label htmlFor={option.label} className={styles.optionLabel}>
-              <input
-                className={styles.optionRadio}
-                type="radio"
-                id={option.label}
-                value={option.value}
-                checked={option.value === selected.value}
-                onChange={() => handleClick(option)}
-              />
-              {option.label}
-            </label>
+            {option.label}
           </li>
+
+          /* eslint-enable jsx-a11y/click-events-have-key-events */
         ))}
       </ul>
     </div>
