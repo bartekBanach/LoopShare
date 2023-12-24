@@ -14,7 +14,7 @@ function Navbar() {
   const handleLogout = () => {
     logout();
     navigate('/');
-    toast.info('Logged out.');
+    toast.info('User logged out.');
   };
 
   return (

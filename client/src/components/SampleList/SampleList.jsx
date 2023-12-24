@@ -6,26 +6,28 @@ import styles from './SampleList.module.css';
 import Spinner from '../Spinner/Spinner';
 
 function SampleList({ samples, loading, error }) {
-  /* if (error) return <p>A network error was encountered</p>;
-    if (loading) return <p>Loading...</p>; */
-
   if (error)
     return (
       <div className={styles.container}>
         <div className={styles.communicat}>
           <IoWarning className={styles.icon} />
-          <p>A network error was encountered.</p>
+          <p>
+            <b>Error!</b> A network error was encountered.
+          </p>
         </div>
       </div>
     );
-
-  return (
-    <div className={styles.container}>
-      {loading ? (
+  if (loading)
+    return (
+      <div className={styles.container}>
         <div>
           <Spinner text="Loading samples..." />
         </div>
-      ) : samples.length > 0 ? (
+      </div>
+    );
+  return (
+    <div className={styles.container}>
+      {samples.length > 0 ? (
         samples.map((sample) => <Sample key={sample._id} sample={sample} />)
       ) : (
         <div className={styles.communicat}>

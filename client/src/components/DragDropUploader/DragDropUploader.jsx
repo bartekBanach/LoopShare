@@ -80,7 +80,7 @@ function DragDropUploader({ setFiles }) {
             <GrCloudUpload size="75px" />
           </div>
 
-          <div className={styles.text}>Drag and drop one or more files</div>
+          <div className={styles.text}>Drag and drop one or more audio files</div>
           <div className={styles.textSecondary}>Supports only mp3 and wav files</div>
         </div>
       </div>

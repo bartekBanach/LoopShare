@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { IoIosBrowsers } from 'react-icons/io';
+
 import SampleList from '../../components/SampleList/SampleList';
 import Search from '../../components/Search/Search';
 import Pagination from '../../components/Pagination/Pagination';
@@ -8,7 +10,7 @@ import styles from './Browse.module.css';
 function Browse() {
   const [samples, setSamples] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
@@ -41,12 +43,12 @@ function Browse() {
         const res = await axios.get(url);
 
         setSamples(res.data.items);
-        setError(null);
+        setError(false);
         setPageCount(res.data.pagination.pageCount);
         setItemCount(res.data.pagination.count);
       } catch (err) {
         setSamples(null);
-        setError(err.message);
+        setError(false);
       } finally {
         setLoading(false);
       }
@@ -54,9 +56,6 @@ function Browse() {
     setLoading(true);
     getSamples();
   }, [currentPage, query, filters, sort, limit]);
-
-  // if (error) return <p>A network error was encountered</p>;
-  // if (loading) return <p>Loading...</p>;
 
   return (
     <div className={styles.container}>
@@ -71,12 +70,12 @@ function Browse() {
       />
 
       <div className={styles.content}>
-        {/* <div className={styles.header}>
-          <IoIosBrowsers className={styles.headerIcon} />
-          Browse Samples
-  </div> */}
-
         <div className={styles.list}>
+          <div className={styles.header}>
+            <IoIosBrowsers className={styles.headerIcon} />
+            <h2>Browse sounds</h2>
+          </div>
+
           <Pagination
             currentPage={currentPage}
             pageCount={pageCount}
@@ -84,6 +83,8 @@ function Browse() {
             setCurrentPage={setCurrentPage}
             limit={limit}
             setLimit={setLimit}
+            loading={loading}
+            error={error}
           />
 
           <SampleList samples={samples} loading={loading} error={error} />
@@ -95,6 +96,8 @@ function Browse() {
             setCurrentPage={setCurrentPage}
             limit={limit}
             setLimit={setLimit}
+            loading={loading}
+            error={error}
           />
         </div>
       </div>

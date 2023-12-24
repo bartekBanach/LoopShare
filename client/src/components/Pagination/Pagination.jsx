@@ -21,7 +21,7 @@ const getPagesCut = (cut, currentPage, pageCount) => {
   return { start: currentPage - ceiling + 1, end: currentPage + floor + 1 };
 };
 
-function Pagination({ currentPage, pageCount, itemCount, setCurrentPage, limit, setLimit }) {
+function Pagination({ currentPage, pageCount, itemCount, setCurrentPage, limit, setLimit, loading, error }) {
   const pages = getPagesCut(5, currentPage, pageCount);
 
   const handlePageChange = (page) => {
@@ -45,6 +45,8 @@ function Pagination({ currentPage, pageCount, itemCount, setCurrentPage, limit, 
   } else if (resultsEnd > itemCount) {
     resultsEnd = itemCount;
   }
+
+  if (itemCount === 0 || loading || error) return undefined;
 
   return (
     <div className={styles.container}>

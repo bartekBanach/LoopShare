@@ -35,7 +35,7 @@ function Index() {
 
   return (
     <div className={styles.container}>
-      <Marquee content={marqueeContent} background="black" />
+      <Marquee content={marqueeContent} />
 
       <div className={styles.content}>
         <div className={styles.window}>
@@ -65,7 +65,7 @@ function Index() {
         <div className={styles.aside}>
           <div className={styles.imgFrame}>
             <div className={styles.imgWrapper}>
-              <img src={img1} alt="landing" />
+              <img src={img1} alt="MIDI Controller and computer keyboard" />
             </div>
           </div>
         </div>

@@ -44,6 +44,7 @@ function User() {
 
         const res = await axios.get(url);
         setSamples(res.data.items);
+        setError(false);
 
         setPageCount(res.data.pagination.pageCount);
         setItemCount(res.data.pagination.count);
@@ -59,45 +60,45 @@ function User() {
     getSamples();
   }, [currentPage, limit, userId]);
 
-  if (error) return <p>Network error.</p>;
-
-  if (user && samples)
-    return (
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.headerItem}>
-            <button type="button" className={styles.backBtn}>
-              <Link to="/browse">Back to All samples</Link>
-            </button>
-          </div>
-          <div className={styles.headerItem}>
-            <h2 className={styles.username}>{user.username}&apos;s samples</h2>
-          </div>
-          <div className={styles.headerItem} />
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <div className={styles.headerItem}>
+          <button type="button" className={styles.backBtn}>
+            <Link to="/browse">Back to All samples</Link>
+          </button>
         </div>
-        <div className={styles.list}>
-          <Pagination
-            currentPage={currentPage}
-            pageCount={pageCount}
-            itemCount={itemCount}
-            setCurrentPage={setCurrentPage}
-            limit={limit}
-            setLimit={setLimit}
-          />
-
-          <SampleList samples={samples} loading={loading} />
-
-          <Pagination
-            currentPage={currentPage}
-            pageCount={pageCount}
-            itemCount={itemCount}
-            setCurrentPage={setCurrentPage}
-            limit={limit}
-            setLimit={setLimit}
-          />
+        <div className={styles.headerItem}>
+          <h2 className={styles.username}>{user ? user.username : 'user'}&apos;s sounds</h2>
         </div>
+        <div className={styles.headerItem} />
       </div>
-    );
+
+      <Pagination
+        currentPage={currentPage}
+        pageCount={pageCount}
+        itemCount={itemCount}
+        setCurrentPage={setCurrentPage}
+        limit={limit}
+        setLimit={setLimit}
+        loading={loading}
+        error={error}
+      />
+
+      <SampleList samples={samples} loading={loading} error={error} />
+
+      <Pagination
+        currentPage={currentPage}
+        pageCount={pageCount}
+        itemCount={itemCount}
+        setCurrentPage={setCurrentPage}
+        limit={limit}
+        setLimit={setLimit}
+        loading={loading}
+        error={error}
+      />
+    </div>
+  );
 }
 
 export default User;

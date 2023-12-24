@@ -1,8 +1,8 @@
 import styles from './Marquee.module.css';
 
-function Marquee({ content, background = 'black' }) {
+function Marquee({ content }) {
   return (
-    <div className={`${styles.marquee} ${styles[background]}`}>
+    <div className={styles.marquee}>
       <ul className={styles.marquee__content}>
         {content.map((item) => (
           <li key={item.id}>{item.text}</li>

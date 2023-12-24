@@ -1,20 +1,6 @@
-.black {
-  background-color: var(--black);
-}
-
-.blue {
-  background-color: salmon;
-}
-
-.pink {
-  background-color: #fe8786;
-}
-
-.green {
-  background-color: #7bc950;
-}
-
 .marquee {
+  background-color: var(--black);
+
   --gap: 1rem;
   display: flex;
   overflow: hidden;

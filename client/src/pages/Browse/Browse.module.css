@@ -1,19 +1,6 @@
 .container {
   padding-top: 2rem;
 }
-.header {
-  background-color: var(--gray400);
-  color: white;
-  font-size: 1.5rem;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.content {
-  border-radius: 1rem;
-}
 
 .list {
   background-color: var(--white);
@@ -21,9 +8,31 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 2rem;
-  width: 75%;
-  margin: 0 auto;
+  padding-bottom: 2rem;
+  width: 70%;
+  margin: 2rem auto;
   justify-content: center;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: var(--gray100);
+  display: flex;
+  align-items: center;
+  padding: 0.4rem;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.header h2 {
+  font-weight: 500;
+  color: var(--black);
+}
+
+.headerIcon {
+  font-size: 1.5rem;
+  display: block;
+  border: none;
+  color: var(--gray);
 }

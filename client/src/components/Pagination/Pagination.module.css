@@ -4,9 +4,9 @@
   margin: 0 auto;
   margin-bottom: 1rem;
   border: 1px solid var(--gray300);
-  border-radius: 0.7rem;
+  border-radius: 0.5em;
   justify-content: center;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 0rem;
   width: 40%;
   background-color: var(--gray100);
 }
@@ -14,8 +14,8 @@
 .paginationItem {
   font-family: inherit;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
   font-weight: bold;
   background-color: var(--white);
