@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import PropTypes from 'prop-types';
 import styles from './Searchbar.module.css';
 
 function Searchbar({ query, setQuery, setCurrentPage }) {
@@ -45,9 +44,5 @@ function Searchbar({ query, setQuery, setCurrentPage }) {
   );
 }
 
-Searchbar.propTypes = {
-  query: PropTypes.string.isRequired,
-  setQuery: PropTypes.func.isRequired,
-  setCurrentPage: PropTypes.func.isRequired,
-};
+
 export default Searchbar;

@@ -1,5 +1,4 @@
 import { createContext, useReducer, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
 
 export const AuthContext = createContext();
 
@@ -35,6 +34,3 @@ export function AuthContextProvider({ children }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-AuthContextProvider.propTypes = {
-  children: PropTypes.node,
-};

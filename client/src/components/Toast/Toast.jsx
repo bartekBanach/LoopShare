@@ -1,7 +1,6 @@
 import { TbAlertCircleFilled, TbCircleCheckFilled, TbX } from 'react-icons/tb';
 
 import { BiSolidErrorAlt, BiSolidInfoCircle } from 'react-icons/bi';
-import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import useToastContext from '../../hooks/useToastContext';
@@ -70,10 +69,5 @@ function Toast({ message, type, id }) {
   );
 }
 
-Toast.propTypes = {
-  message: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-};
 
 export default Toast;

@@ -42,7 +42,6 @@ const getSamples = async (req, res) => {
       .limit(limit);
 
     const count = await Sample.countDocuments(query);
-    console.log("count", count);
 
     const pageCount = Math.ceil(count / limit);
 

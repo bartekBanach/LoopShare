@@ -114,7 +114,11 @@ function Player({ sample }) {
 
   return (
     <div className={styles.player}>
-      <button type="button" disabled={loading} onClick={onPlayClick} className={styles.playBtn}>
+      <button type="button" 
+        disabled={loading} 
+        onClick={onPlayClick} 
+        className={`${styles.playBtn} ${loading && styles.disabled}`}
+      >
         {isPlaying ? <FaPause size="30px" /> : <FaPlay size="30px" />}
       </button>
 

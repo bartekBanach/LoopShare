@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styles from './Sort.module.css';
 
 function Sort({ sort, setSort }) {
@@ -36,12 +35,5 @@ function Sort({ sort, setSort }) {
   );
 }
 
-Sort.propTypes = {
-  sort: PropTypes.shape({
-    sortBy: PropTypes.string.isRequired,
-    order: PropTypes.string.isRequired,
-  }).isRequired,
-  setSort: PropTypes.func.isRequired,
-};
 
 export default Sort;

@@ -1,5 +1,4 @@
 import { createContext, useReducer, useMemo } from 'react';
-import PropTypes from 'prop-types';
 
 export const ToastContext = createContext();
 
@@ -76,10 +75,5 @@ export function ToastContextProvider({ children = null }) {
   return <ToastContext.Provider value={value}>{children}</ToastContext.Provider>;
 }
 
-ToastContextProvider.propTypes = {
-  children: PropTypes.node,
-};
 
-ToastContextProvider.defaultProps = {
-  children: null,
-};
+
