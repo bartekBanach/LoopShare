@@ -1,16 +1,22 @@
+
 .container {
   background-color: var(--lightblue);
+  height: 100%;
+
+  
 }
 .content {
+
   display: flex;
   max-width: 100%;
-  margin: 0rem auto;
+  margin: 0 auto;
   color: var(--black);
   justify-content: space-between;
   width: 95%;
 }
 
 .window {
+
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
